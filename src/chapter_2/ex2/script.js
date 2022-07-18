@@ -4,6 +4,8 @@
 let xy = [0, 0];
 let finalResult = 0;
 let i = 0;
+let dot = 0;
+let stepen = 1;
 const operation = [0, 0, 0, 0]
 
 const buttonC = document.querySelector('.gridslot:nth-child(2)')
@@ -18,40 +20,81 @@ const buttonMinus = document.querySelector('.gridslot:nth-child(10)')
 const button7 = document.querySelector('.gridslot:nth-child(11)')
 const button8 = document.querySelector('.gridslot:nth-child(12)')
 const button9 = document.querySelector('.gridslot:nth-child(13)')
-const buttonX = document.querySelector('.gridslot:nth-child(14)')
+const buttonMultiply = document.querySelector('.gridslot:nth-child(14)')
 const buttonDivide = document.querySelector('.gridslot:nth-child(15)')
 const button0 = document.querySelector('.gridslot:nth-child(16)')
 const buttonDot = document.querySelector('.gridslot:nth-child(17)')
 const buttonEqual = document.querySelector('.gridslot:nth-child(18)')
 
-const result = document.querySelector('.gridslot div')
+const result = document.querySelector('.gridslot div span')
 
 buttonEqual.addEventListener('click', function (event) {
     if (operation[0] === 1) {
         if (i === 1) {
             xy[0] = xy[0] + xy[1]
-            document.querySelector('.gridslot div').innerText = xy[0]
+            document.querySelector('.gridslot div span').innerText = xy[0]
             xy[1] = 0
             i = 0
         }
         else {
             xy[1] = xy[0] + xy[1]
-            document.querySelector('.gridslot div').innerText = xy[1]
+            document.querySelector('.gridslot div span').innerText = xy[1]
             xy[0] = 0
             i = 0
         }
         operation[0] = 0
     }
-
-    document.querySelector('.gridslot div').style.color = 'black'
-
-
-
+    if (operation[1] === 1) {
+        if (i === 1) {
+            xy[0] = xy[0] - xy[1]
+            document.querySelector('.gridslot div span').innerText = xy[0]
+            xy[1] = 0
+            i = 0
+        }
+        else {
+            xy[1] = xy[1] - xy[0]
+            document.querySelector('.gridslot div span').innerText = xy[1]
+            xy[0] = 0
+            i = 0
+        }
+        operation[1] = 0
+    }
+    if (operation[2] === 1) {
+        if (i === 1) {
+            xy[0] = xy[0] * xy[1]
+            document.querySelector('.gridslot div span').innerText = xy[0]
+            xy[1] = 0
+            i = 0
+        }
+        else {
+            xy[1] = xy[1] * xy[0]
+            document.querySelector('.gridslot div span').innerText = xy[1]
+            xy[0] = 0
+            i = 0
+        }
+        operation[2] = 0
+    }
+    if (operation[3] === 1) {
+        if (i === 1) {
+            xy[0] = xy[0] / xy[1]
+            document.querySelector('.gridslot div span').innerText = xy[0]
+            xy[1] = 0
+            i = 0
+        }
+        else {
+            xy[1] = xy[1] / xy[0]
+            document.querySelector('.gridslot div span').innerText = xy[1]
+            xy[0] = 0
+            i = 0
+        }
+        operation[3] = 0
+    }
 })
 
 buttonC.addEventListener('click', function (event) {
-    xy[i] = 0;
-    document.querySelector('.gridslot div').innerText = xy[i]
+    xy = [0, 0]
+    stepen = 0
+    document.querySelector('.gridslot div span').innerText = xy[i]
 })
 
 buttonPlus.addEventListener('click', function (event) {
@@ -60,64 +103,103 @@ buttonPlus.addEventListener('click', function (event) {
     operation[0] = 1
 })
 
+buttonMinus.addEventListener('click', function (event) {
+    if (i == 0) i = 1
+    else i = 0
+    operation[1] = 1
+})
+
+buttonMultiply.addEventListener('click', function (event) {
+    if (i == 0) i = 1
+    else i = 0
+    operation[2] = 1
+})
+
+buttonDivide.addEventListener('click', function (event) {
+    if (i == 0) i = 1
+    else i = 0
+    operation[3] = 1
+})
+
+buttonMinus.addEventListener('click', function (event) {
+    if (i == 0) i = 1
+    else i = 0
+    operation[1] = 1
+})
+
+buttonDot.addEventListener('click', function (event) {
+    document.querySelector('.gridslot div span').append(".")
+    dot = 1
+})
+
+
 button1.addEventListener('click', function (event) {
+    if (!dot) {
     xy[i] = xy[i] * 10 + 1;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
+    }
+    else {
+        console.log(xy[i], stepen, i)
+        xy[i] = xy[i] +  0.1 / stepen;
+        stepen = stepen * 10;
+        document.querySelector('.gridslot div span').innerText = xy[i]
+        document.querySelector('.gridslot div span').style.color = 'black'
+    }
 })
 
 button2.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 2;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button3.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 3;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button4.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 4;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button5.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 5;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button6.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 6;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button7.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 7;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button8.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 8;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button9.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10 + 9;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 button0.addEventListener('click', function (event) {
     xy[i] = xy[i] * 10;
-    document.querySelector('.gridslot div').innerText = xy[i]
-    document.querySelector('.gridslot div').style.color = 'black'
+    document.querySelector('.gridslot div span').innerText = xy[i]
+    document.querySelector('.gridslot div span').style.color = 'black'
 })
 
 
