@@ -102,6 +102,7 @@ function plusuem(event) {
 function reset(event) {
   xy = [0, 0];
   stepen = 1;
+  dot = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
