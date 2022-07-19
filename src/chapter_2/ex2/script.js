@@ -25,8 +25,45 @@ const buttonDivide = document.querySelector(".gridslot:nth-child(15)");
 const button0 = document.querySelector(".gridslot:nth-child(16)");
 const buttonDot = document.querySelector(".gridslot:nth-child(17)");
 const buttonEqual = document.querySelector(".gridslot:nth-child(18)");
-
 const result = document.querySelector(".gridslot div span");
+
+button2.addEventListener("click", putTwo);
+button3.addEventListener("click", putThree);
+button4.addEventListener("click", putFour);
+button5.addEventListener("click", putFive);
+button6.addEventListener("click", putSix);
+button7.addEventListener("click", putSeven);
+button8.addEventListener("click", putEight);
+button9.addEventListener("click", putNine);
+button0.addEventListener("click", putZero);
+buttonEqual.addEventListener("click", equal);
+buttonPlus.addEventListener("click", plusuem);
+buttonMultiply.addEventListener("click", multiplaem);
+buttonDivide.addEventListener("click", delim);
+buttonMinus.addEventListener("click", vichitaem);
+buttonC.addEventListener("click", reset);
+buttonDot.addEventListener("click", tochka);
+button1.addEventListener("click", putOne);
+
+addEventListener("keydown", (e) => {
+	if (e.key === "=" || e.key === "Enter") equal();
+	else if (e.key === "+") plusuem();
+	else if (e.key === "Backspace" || e.key === "Clear") reset();
+	else if (e.key === "*") multiplaem();
+	else if (e.key === "-") vichitaem();
+	else if (e.key === "/") delim();
+	else if (e.key === ".") tochka();
+	else if (e.key === "1") putOne();
+	else if (e.key === "2") putTwo();
+	else if (e.key === "3") putThree();
+	else if (e.key === "4") putFour();
+	else if (e.key === "5") putFive();
+	else if (e.key === "6") putSix();
+	else if (e.key === "7") putSeven();
+	else if (e.key === "8") putEight();
+	else if (e.key === "9") putNine();
+	else if (e.key === "0") putZero();
+  });
 
 function equal(event) {
   if (operation[0] === 1) {
@@ -91,7 +128,6 @@ function equal(event) {
 }
 
 function plusuem(event) {
-  console.log(xy[0], xy[1], i);
   if (i == 0) i = 1;
   else i = 0;
   operation[0] = 1;
@@ -132,13 +168,11 @@ function vichitaem(event) {
 }
 
 function tochka(event) {
-  console.log(xy[0], xy[1], i);
   document.querySelector(".gridslot div span").append(".");
   dot = 1;
 }
 
 function putOne(event) {
-  console.log(xy[0], xy[1], i);
   if (!dot) xy[i] = xy[i] * 10 + 1;
   else {
     xy[i] = xy[i] + 0.1 / stepen;
@@ -161,7 +195,6 @@ function putTwo(event) {
 function putThree(event) {
   if (!dot) xy[i] = xy[i] * 10 + 3;
   else {
-    console.log(xy[i], stepen, i);
     xy[i] = xy[i] + 0.3 / stepen;
     stepen = stepen * 10;
   }
@@ -172,7 +205,6 @@ function putThree(event) {
 function putFour(event) {
   if (!dot) xy[i] = xy[i] * 10 + 4;
   else {
-    console.log(xy[i], stepen, i);
     xy[i] = xy[i] + 0.4 / stepen;
     stepen = stepen * 10;
   }
@@ -183,7 +215,6 @@ function putFour(event) {
 function putFive(event) {
   if (!dot) xy[i] = xy[i] * 10 + 5;
   else {
-    console.log(xy[i], stepen, i);
     xy[i] = xy[i] + 0.5 / stepen;
     stepen = stepen * 10;
   }
@@ -194,7 +225,6 @@ function putFive(event) {
 function putSix(event) {
   if (!dot) xy[i] = xy[i] * 10 + 6;
   else {
-    console.log(xy[i], stepen, i);
     xy[i] = xy[i] + 0.6 / stepen;
     stepen = stepen * 10;
   }
@@ -205,7 +235,6 @@ function putSix(event) {
 function putSeven(event) {
   if (!dot) xy[i] = xy[i] * 10 + 7;
   else {
-    console.log(xy[i], stepen, i);
     xy[i] = xy[i] + 0.7 / stepen;
     stepen = stepen * 10;
   }
@@ -216,7 +245,6 @@ function putSeven(event) {
 function putEight(event) {
   if (!dot) xy[i] = xy[i] * 10 + 8;
   else {
-    console.log(xy[i], stepen, i);
     xy[i] = xy[i] + 0.8 / stepen;
     stepen = stepen * 10;
   }
@@ -227,7 +255,6 @@ function putEight(event) {
 function putNine(event) {
   if (!dot) xy[i] = xy[i] * 10 + 9;
   else {
-    console.log(xy[i], stepen, i);
     xy[i] = xy[i] + 0.9 / stepen;
     stepen = stepen * 10;
   }
@@ -241,127 +268,4 @@ function putZero(event) {
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
-button2.addEventListener("click", putTwo);
 
-button3.addEventListener("click", putThree);
-
-button4.addEventListener("click", putFour);
-
-button5.addEventListener("click", putFive);
-
-button6.addEventListener("click", putSix);
-
-button7.addEventListener("click", putSeven);
-
-button8.addEventListener("click", putEight);
-
-button9.addEventListener("click", putNine);
-
-button0.addEventListener("click", putZero);
-
-buttonEqual.addEventListener("click", equal);
-
-buttonPlus.addEventListener("click", plusuem);
-
-buttonMultiply.addEventListener("click", multiplaem);
-
-buttonDivide.addEventListener("click", delim);
-
-buttonMinus.addEventListener("click", vichitaem);
-
-buttonC.addEventListener("click", reset);
-
-buttonDot.addEventListener("click", tochka);
-
-button1.addEventListener("click", putOne);
-
-addEventListener("keydown", (e) => {
-  console.log(e.key);
-  if (e.key === "=" || e.key === "Enter") equal();
-  else if (e.key === "+") plusuem();
-  else if (e.key === "Backspace" || e.key === "Clear") reset();
-  else if (e.key === "*") multiplaem();
-  else if (e.key === "-") vichitaem();
-  else if (e.key === "/") delim();
-  else if (e.key === ".") tochka();
-  else if (e.key === "1") putOne();
-  else if (e.key === "2") putTwo();
-  else if (e.key === "3") putThree();
-  else if (e.key === "4") putFour();
-  else if (e.key === "5") putFive();
-  else if (e.key === "6") putSix();
-  else if (e.key === "7") putSeven();
-  else if (e.key === "8") putEight();
-  else if (e.key === "9") putNine();
-  else if (e.key === "0") putZero();
-});
-
-function one(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(1);
-  } else return 1;
-}
-function two(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(2);
-  } else return 2;
-}
-function three(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(3);
-  } else return 3;
-}
-function four(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(4);
-  } else return 4;
-}
-function five(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(5);
-  } else return 5;
-}
-function six(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(6);
-  } else return 6;
-}
-function seven(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(7);
-  } else return 7;
-}
-function eight(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(8);
-  } else return 8;
-}
-function nine(callback) {
-  if (callback && typeof callback === "function") {
-    return callback(9);
-  } else return 9;
-}
-
-function plus(a) {
-  return (b) => {
-    return a + b;
-  };
-}
-
-function minus(a) {
-  return (b) => {
-    return a - b;
-  };
-}
-
-function divide(a) {
-  return (b) => {
-    return a / b;
-  };
-}
-
-function mult(a) {
-  return (b) => {
-    return a * b;
-  };
-}
