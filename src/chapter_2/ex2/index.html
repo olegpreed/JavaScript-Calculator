@@ -1,96 +1,87 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
-    <title>Calculator</title>
-  </head>
 
-  <body>
-    <div class="main">
-      <div class="corpus">
-        <div class="name"></div>
-        <div class="grid">
-          <div class="gridslot">
-            <div class="result" id="result">
-              <span>Result</span>
-              <div class="overlay"></div>
-            </div>
-          </div>
-          <div class="gridslot">
-            <div class="reset">C</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">1</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">2</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">3</div>
-          </div>
-          <div class="gridslot">
-            <div class="button operator">+</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">4</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">5</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">6</div>
-          </div>
-          <div class="gridslot">
-            <div class="button operator">-</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">7</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">8</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">9</div>
-          </div>
-          <div class="gridslot">
-            <div class="button operator">x</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">/</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">0</div>
-          </div>
-          <div class="gridslot">
-            <div class="button white">.</div>
-          </div>
-          <div class="gridslot">
-            <div class="button operator">=</div>
-          </div>
-        </div>
-      </div>
-      <svg
-        class="template"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="346px"
-        height="701px"
-      >
-        <path
-          fill-rule="evenodd"
-          stroke-width="0px"
-          stroke-dasharray="0, 0, 0, 0"
-          stroke-linecap="round"
-          stroke-linejoin="miter"
-          fill="rgb(35, 35, 35)"
-          d="M334.574,675.816 C344.826,662.196 343.37,624.919 343.37,624.919 C343.37,624.919 341.581,307.933 343.37,293.591 C346.841,293.433 345.526,293.591 345.526,293.591 L345.526,209.761 L343.37,209.761 L343.37,73.38 C343.37,73.38 345.710,35.129 329.595,19.148 C307.504,-2.761 275.830,1.184 275.830,1.184 C275.830,1.184 228.534,1.643 174.273,1.683 C135.329,1.712 69.422,1.440 69.422,1.440 C69.422,1.440 40.903,-1.159 20.941,15.156 C0.457,32.647 3.19,73.38 3.19,73.38 L3.19,141.899 L0.530,141.899 L0.530,168.345 L2.521,168.345 L2.521,191.798 L1.28,191.798 L1.526,244.690 L3.19,244.690 L3.19,258.163 L1.28,258.163 L1.28,311.555 L3.19,311.555 L2.521,624.420 C2.521,624.420 0.518,663.690 13.971,678.810 C36.401,704.17 76.698,700.765 76.698,700.765 L172.779,700.266 L289.769,699.268 C289.769,699.268 317.407,698.621 334.574,675.816 ZM326.608,630.408 L326.608,315.48 C326.608,315.48 327.113,76.909 326.608,58.568 C325.285,20.476 294.901,17.524 288.276,17.651 C287.520,17.594 269.856,17.651 269.856,17.651 C269.856,17.651 240.708,17.726 240.484,17.651 C238.596,17.695 236.16,20.542 236.3,22.641 C235.979,22.678 235.970,30.598 236.3,31.123 C236.3,36.896 227.449,43.430 219.575,43.598 C219.415,43.758 165.809,43.598 165.809,43.598 C165.809,43.598 135.809,43.598 124.987,43.598 C114.166,43.598 110.53,33.98 110.53,30.125 C110.53,27.153 110.53,25.202 110.53,22.641 C110.53,20.79 107.363,17.651 106.70,17.651 C104.776,17.651 76.200,17.651 76.200,17.651 C76.200,17.651 75.390,18.150 53.300,18.150 C39.539,18.150 19.448,31.407 19.448,61.63 C19.448,83.890 19.448,298.581 19.448,298.581 C19.448,298.581 19.448,608.601 19.448,645.378 C19.448,682.155 56.785,683.301 56.785,683.301 L164.316,683.301 C164.316,683.301 290.124,683.301 290.765,683.301 C308.396,681.694 326.94,670.88 326.608,644.380 C326.719,644.343 326.608,630.408 326.608,630.408 Z"
-        />
-      </svg>
-    </div>
-    <script src="script.js"></script>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+	<title>Calculator</title>
+</head>
+
+<body>
+	<div class="main">
+		<div class="corpus">
+			<div class="name"></div>
+			<div class="grid">
+				<div class="gridslot">
+					<div class="result" id="result">
+						<span>Result</span>
+						<div class="overlay"></div>
+					</div>
+				</div>
+				<div class="gridslot">
+					<div class="reset">C</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">1</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">2</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">3</div>
+				</div>
+				<div class="gridslot">
+					<div class="button operator">+</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">4</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">5</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">6</div>
+				</div>
+				<div class="gridslot">
+					<div class="button operator">-</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">7</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">8</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">9</div>
+				</div>
+				<div class="gridslot">
+					<div class="button operator">x</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">/</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">0</div>
+				</div>
+				<div class="gridslot">
+					<div class="button white">.</div>
+				</div>
+				<div class="gridslot">
+					<div class="button operator">=</div>
+				</div>
+			</div>
+		</div>
+		<svg class="template" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+			width="346px" height="701px">
+			<path fill-rule="evenodd" stroke-width="0px" stroke-dasharray="0, 0, 0, 0" stroke-linecap="round"
+				stroke-linejoin="miter" fill="rgb(35, 35, 35)"
+				d="M334.574,675.816 C344.826,662.196 343.37,624.919 343.37,624.919 C343.37,624.919 341.581,307.933 343.37,293.591 C346.841,293.433 345.526,293.591 345.526,293.591 L345.526,209.761 L343.37,209.761 L343.37,73.38 C343.37,73.38 345.710,35.129 329.595,19.148 C307.504,-2.761 275.830,1.184 275.830,1.184 C275.830,1.184 228.534,1.643 174.273,1.683 C135.329,1.712 69.422,1.440 69.422,1.440 C69.422,1.440 40.903,-1.159 20.941,15.156 C0.457,32.647 3.19,73.38 3.19,73.38 L3.19,141.899 L0.530,141.899 L0.530,168.345 L2.521,168.345 L2.521,191.798 L1.28,191.798 L1.526,244.690 L3.19,244.690 L3.19,258.163 L1.28,258.163 L1.28,311.555 L3.19,311.555 L2.521,624.420 C2.521,624.420 0.518,663.690 13.971,678.810 C36.401,704.17 76.698,700.765 76.698,700.765 L172.779,700.266 L289.769,699.268 C289.769,699.268 317.407,698.621 334.574,675.816 ZM326.608,630.408 L326.608,315.48 C326.608,315.48 327.113,76.909 326.608,58.568 C325.285,20.476 294.901,17.524 288.276,17.651 C287.520,17.594 269.856,17.651 269.856,17.651 C269.856,17.651 240.708,17.726 240.484,17.651 C238.596,17.695 236.16,20.542 236.3,22.641 C235.979,22.678 235.970,30.598 236.3,31.123 C236.3,36.896 227.449,43.430 219.575,43.598 C219.415,43.758 165.809,43.598 165.809,43.598 C165.809,43.598 135.809,43.598 124.987,43.598 C114.166,43.598 110.53,33.98 110.53,30.125 C110.53,27.153 110.53,25.202 110.53,22.641 C110.53,20.79 107.363,17.651 106.70,17.651 C104.776,17.651 76.200,17.651 76.200,17.651 C76.200,17.651 75.390,18.150 53.300,18.150 C39.539,18.150 19.448,31.407 19.448,61.63 C19.448,83.890 19.448,298.581 19.448,298.581 C19.448,298.581 19.448,608.601 19.448,645.378 C19.448,682.155 56.785,683.301 56.785,683.301 L164.316,683.301 C164.316,683.301 290.124,683.301 290.765,683.301 C308.396,681.694 326.94,670.88 326.608,644.380 C326.719,644.343 326.608,630.408 326.608,630.408 Z" />
+		</svg>
+	</div>
+	<script src="script.js"></script>
+</body>
+
 </html>
