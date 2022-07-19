@@ -86,6 +86,8 @@ function equal(event) {
     operation[3] = 0;
   }
   stepen = 1;
+  document.querySelector(".gridslot div span").innerText = xy[i];
+  document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function plusuem(event) {
@@ -101,6 +103,7 @@ function reset(event) {
   xy = [0, 0];
   stepen = 1;
   document.querySelector(".gridslot div span").innerText = xy[i];
+  document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function multiplaem(event) {
