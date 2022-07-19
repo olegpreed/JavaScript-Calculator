@@ -6,6 +6,8 @@ let finalResult = 0;
 let i = 0;
 let dot = 0;
 let stepen = 1;
+let minus = 0;
+let resetC = 1;
 const operation = [0, 0, 0, 0];
 
 const buttonC = document.querySelector(".gridslot:nth-child(2)");
@@ -46,24 +48,27 @@ buttonDot.addEventListener("click", tochka);
 button1.addEventListener("click", putOne);
 
 addEventListener("keydown", (e) => {
-	if (e.key === "=" || e.key === "Enter") equal();
-	else if (e.key === "+") plusuem();
-	else if (e.key === "Backspace" || e.key === "Clear") reset();
-	else if (e.key === "*") multiplaem();
-	else if (e.key === "-") vichitaem();
-	else if (e.key === "/") delim();
-	else if (e.key === ".") tochka();
-	else if (e.key === "1") putOne();
-	else if (e.key === "2") putTwo();
-	else if (e.key === "3") putThree();
-	else if (e.key === "4") putFour();
-	else if (e.key === "5") putFive();
-	else if (e.key === "6") putSix();
-	else if (e.key === "7") putSeven();
-	else if (e.key === "8") putEight();
-	else if (e.key === "9") putNine();
-	else if (e.key === "0") putZero();
-  });
+  if (e.key === "=" || e.key === "Enter") equal();
+  else if (e.key === "+") plusuem();
+  else if (e.key === "Backspace" || e.key === "Clear") reset();
+  else if (e.key === "*") multiplaem();
+  else if (e.key === "-") vichitaem();
+  else if (e.key === "/") delim();
+  else if (e.key === ".") tochka();
+  else if (e.key === "1") putOne();
+  else if (e.key === "2") putTwo();
+  else if (e.key === "3") putThree();
+  else if (e.key === "4") putFour();
+  else if (e.key === "5") putFive();
+  else if (e.key === "6") putSix();
+  else if (e.key === "7") putSeven();
+  else if (e.key === "8") putEight();
+  else if (e.key === "9") putNine();
+  else if (e.key === "0") putZero();
+  console.log(
+    `minus:  ${minus};\ni: ${i};\nxy[0]:  ${xy[0]};\nxy[1]:  ${xy[1]};\nresetC:  ${resetC}`
+  );
+});
 
 function equal(event) {
   if (operation[0] === 1) {
@@ -138,6 +143,7 @@ function plusuem(event) {
 function reset(event) {
   xy = [0, 0];
   stepen = 1;
+  resetC = 1;
   dot = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
@@ -162,6 +168,10 @@ function delim(event) {
 function vichitaem(event) {
   if (i == 0) i = 1;
   else i = 0;
+  if (resetC) {
+    minus = 1;
+    resetC = 0;
+  }
   operation[1] = 1;
   stepen = 1;
   dot = 0;
@@ -173,100 +183,163 @@ function tochka(event) {
 }
 
 function putOne(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 1;
-  else {
-	if ( xy[i] < 0 ) xy[i] = xy[i] - 0.1 / stepen;
-	else xy[i] = xy[i] + 0.1 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 1;
+    else xy[i] = xy[i] * 10 + 1;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.1 / stepen;
+    else xy[i] = xy[i] + 0.1 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putTwo(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 2;
-  else {
-	if ( xy[i] < 0 ) xy[i] = xy[i] - 0.2 / stepen;
-	else xy[i] = xy[i] + 0.2 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 2;
+    else xy[i] = xy[i] * 10 + 2;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.2 / stepen;
+    else xy[i] = xy[i] + 0.2 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putThree(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 3;
-  else {
-    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.3 / stepen;
-	else xy[i] = xy[i] + 0.3 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 3;
+    else xy[i] = xy[i] * 10 + 3;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.3 / stepen;
+    else xy[i] = xy[i] + 0.3 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putFour(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 4;
-  else {
-    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.4 / stepen;
-	else xy[i] = xy[i] + 0.4 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 4;
+    else xy[i] = xy[i] * 10 + 4;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.4 / stepen;
+    else xy[i] = xy[i] + 0.4 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putFive(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 5;
-  else {
-    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.5 / stepen;
-	else xy[i] = xy[i] + 0.5 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 5;
+    else xy[i] = xy[i] * 10 + 5;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.5 / stepen;
+    else xy[i] = xy[i] + 0.5 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putSix(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 6;
-  else {
-    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.6 / stepen;
-	else xy[i] = xy[i] + 0.6 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 6;
+    else xy[i] = xy[i] * 10 + 6;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.6 / stepen;
+    else xy[i] = xy[i] + 0.6 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putSeven(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 7;
-  else {
-    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.7 / stepen;
-	else xy[i] = xy[i] + 0.7 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 7;
+    else xy[i] = xy[i] * 10 + 7;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.7 / stepen;
+    else xy[i] = xy[i] + 0.7 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putEight(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 8;
-  else {
-    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.8 / stepen;
-	else xy[i] = xy[i] + 0.8 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 8;
+    else xy[i] = xy[i] * 10 + 8;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.8 / stepen;
+    else xy[i] = xy[i] + 0.8 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
 
 function putNine(event) {
-  if (!dot) xy[i] = xy[i] * 10 + 9;
-  else {
-    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.9 / stepen;
-	else xy[i] = xy[i] + 0.9 / stepen;
+  if (!dot) {
+    if (xy[i] < 0) xy[i] = xy[i] * 10 - 9;
+    else xy[i] = xy[i] * 10 + 9;
+  } else {
+    if (xy[i] < 0) xy[i] = xy[i] - 0.9 / stepen;
+    else xy[i] = xy[i] + 0.9 / stepen;
     stepen = stepen * 10;
   }
+  if (minus) {
+    xy[i] *= -1;
+    minus = 0;
+  }
+  resetC = 0;
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
@@ -276,5 +349,3 @@ function putZero(event) {
   document.querySelector(".gridslot div span").innerText = xy[i];
   document.querySelector(".gridslot div span").style.color = "black";
 }
-
-
