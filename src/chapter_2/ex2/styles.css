@@ -100,11 +100,43 @@ body {
 	margin: 1px;
 	color: rgb(65, 65, 65);
 	z-index: 2;
+	transition: background-color 200ms, color 30ms;
+}
+
+.white:hover {
+	border: 10px, 0, black;
+	color: rgb(118, 118, 118);
+	cursor: pointer;
+}
+
+.white:active {
+	background-color: rgb(65, 65, 65);
+	color: white;
 }
 
 .operator {
 	background-color: rgb(65, 65, 65);
 	color: rgb(255, 255, 255);
+}
+
+.operator:hover {
+	background-color: rgb(89, 89, 89);
+	cursor: pointer;
+}
+
+.operator:active {
+	background-color: rgb(255, 255, 255);
+	color: rgb(65, 65, 65);
+}
+
+.reset:hover {
+	cursor: pointer;
+	background-color: rgb(22, 22, 22);
+}
+
+.reset:active {
+	background-color: rgb(155, 251, 114);
+	color: black;
 }
 
 .template {
