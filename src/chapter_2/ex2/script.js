@@ -175,7 +175,8 @@ function tochka(event) {
 function putOne(event) {
   if (!dot) xy[i] = xy[i] * 10 + 1;
   else {
-    xy[i] = xy[i] + 0.1 / stepen;
+	if ( xy[i] < 0 ) xy[i] = xy[i] - 0.1 / stepen;
+	else xy[i] = xy[i] + 0.1 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -185,7 +186,8 @@ function putOne(event) {
 function putTwo(event) {
   if (!dot) xy[i] = xy[i] * 10 + 2;
   else {
-    xy[i] = xy[i] + 0.2 / stepen;
+	if ( xy[i] < 0 ) xy[i] = xy[i] - 0.2 / stepen;
+	else xy[i] = xy[i] + 0.2 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -195,7 +197,8 @@ function putTwo(event) {
 function putThree(event) {
   if (!dot) xy[i] = xy[i] * 10 + 3;
   else {
-    xy[i] = xy[i] + 0.3 / stepen;
+    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.3 / stepen;
+	else xy[i] = xy[i] + 0.3 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -205,7 +208,8 @@ function putThree(event) {
 function putFour(event) {
   if (!dot) xy[i] = xy[i] * 10 + 4;
   else {
-    xy[i] = xy[i] + 0.4 / stepen;
+    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.4 / stepen;
+	else xy[i] = xy[i] + 0.4 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -215,7 +219,8 @@ function putFour(event) {
 function putFive(event) {
   if (!dot) xy[i] = xy[i] * 10 + 5;
   else {
-    xy[i] = xy[i] + 0.5 / stepen;
+    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.5 / stepen;
+	else xy[i] = xy[i] + 0.5 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -225,7 +230,8 @@ function putFive(event) {
 function putSix(event) {
   if (!dot) xy[i] = xy[i] * 10 + 6;
   else {
-    xy[i] = xy[i] + 0.6 / stepen;
+    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.6 / stepen;
+	else xy[i] = xy[i] + 0.6 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -235,7 +241,8 @@ function putSix(event) {
 function putSeven(event) {
   if (!dot) xy[i] = xy[i] * 10 + 7;
   else {
-    xy[i] = xy[i] + 0.7 / stepen;
+    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.7 / stepen;
+	else xy[i] = xy[i] + 0.7 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -245,7 +252,8 @@ function putSeven(event) {
 function putEight(event) {
   if (!dot) xy[i] = xy[i] * 10 + 8;
   else {
-    xy[i] = xy[i] + 0.8 / stepen;
+    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.8 / stepen;
+	else xy[i] = xy[i] + 0.8 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
@@ -255,7 +263,8 @@ function putEight(event) {
 function putNine(event) {
   if (!dot) xy[i] = xy[i] * 10 + 9;
   else {
-    xy[i] = xy[i] + 0.9 / stepen;
+    if ( xy[i] < 0 ) xy[i] = xy[i] - 0.9 / stepen;
+	else xy[i] = xy[i] + 0.9 / stepen;
     stepen = stepen * 10;
   }
   document.querySelector(".gridslot div span").innerText = xy[i];
