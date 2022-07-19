@@ -276,7 +276,7 @@ button1.addEventListener("click", putOne);
 
 addEventListener("keydown", (e) => {
   console.log(e.key);
-  if (e.key === "=" && !e.shiftKey) equal();
+  if (e.key === "=" || e.key === "Enter") equal();
   else if (e.key === "+") plusuem();
   else if (e.key === "Backspace" || e.key === "Clear") reset();
   else if (e.key === "*") multiplaem();
@@ -292,6 +292,7 @@ addEventListener("keydown", (e) => {
   else if (e.key === "7") putSeven();
   else if (e.key === "8") putEight();
   else if (e.key === "9") putNine();
+  else if (e.key === "0") putZero();
 });
 
 function one(callback) {
