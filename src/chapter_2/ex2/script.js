@@ -65,9 +65,6 @@ addEventListener("keydown", (e) => {
   else if (e.key === "8") putEight();
   else if (e.key === "9") putNine();
   else if (e.key === "0") putZero();
-  console.log(
-    `minus:  ${minus};\ni: ${i};\nxy[0]:  ${xy[0]};\nxy[1]:  ${xy[1]};\nresetC:  ${resetC}`
-  );
 });
 
 function equal(event) {
@@ -168,11 +165,12 @@ function delim(event) {
 function vichitaem(event) {
   if (i == 0) i = 1;
   else i = 0;
+  operation[1] = 1;
   if (resetC) {
     minus = 1;
     resetC = 0;
+    operation[1] = 0;
   }
-  operation[1] = 1;
   stepen = 1;
   dot = 0;
 }
