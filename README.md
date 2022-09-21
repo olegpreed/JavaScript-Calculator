@@ -10,4 +10,12 @@ Just multiply all the weeks by seven and... \
 Calculator-it! \
 There are no limits to this all mighty machine! But for the love of God don't divide by zero for it can cause distortion of our reality.
 
+## Possibilities
+
+| Can do!     | Sorry, no can do!|
+| ----------- | ----------- |
+| Divide by zero | Spell 'boobs'  |
+| Operations with floats| Run Doom   |
+
+
 [preview]: include/preview.webp
