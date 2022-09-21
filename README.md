@@ -14,8 +14,9 @@ There are no limits to this all mighty machine! But for the love of God don't di
 
 | Can do!     | Sorry, no can do!|
 | ----------- | ----------- |
-| Divide by zero | Spell 'boobs'  |
-| Operations with floats| Run Doom   |
+| Divide by zero | Spell 'BOOBS'|
+| Operations with floats| Run Doom|
+| Copy Google translate color scheme| Predict future|
 
 
 [preview]: include/preview.webp
