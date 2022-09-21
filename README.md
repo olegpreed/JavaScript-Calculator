@@ -3,11 +3,6 @@ This calculator have all the basic funcitonality of these infamous pocket comput
 
 ### [TRY IT](https://htmlpreview.github.io/?https://github.com/olegpreed/JavaScript-Calculator/blob/develop/index.html)
 ![Preview][preview]
-Want to know how many calories are there in pasta carbonara? \
-Just Calculator-it! \
-Curious to know how many days are there in a year? \
-Just multiply all the weeks by seven and... \
-Calculator-it! \
 
 ## Possibilities
 
