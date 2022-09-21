@@ -11,7 +11,7 @@ This calculator has all the basic funcitonality of these infamous pocket compute
 | Divide by zero | Spell 'BOOBS'|
 | Operations with floats| Run Doom|
 | Copy Google Translate color scheme| Predict future|
-| Negative numbers sorcery| AI learning|
+| Negative numbers sorcery| Machine learning|
 
 
 [preview]: include/preview.webp
