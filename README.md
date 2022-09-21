@@ -8,7 +8,6 @@ Just Calculator-it! \
 Curious to know how many days are there in a year? \
 Just multiply all the weeks by seven and... \
 Calculator-it! \
-There are no limits to this all mighty machine! But for the love of God don't divide by zero for it can cause distortion of our reality.
 
 ## Possibilities
 
@@ -16,7 +15,8 @@ There are no limits to this all mighty machine! But for the love of God don't di
 | ----------- | ----------- |
 | Divide by zero | Spell 'BOOBS'|
 | Operations with floats| Run Doom|
-| Copy Google translate color scheme| Predict future|
+| Copy Google Translate color scheme| Predict future|
+| Negative numbers sorcery| AI learning|
 
 
 [preview]: include/preview.webp
